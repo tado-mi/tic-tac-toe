@@ -1,6 +1,8 @@
+package util;
+
 public class State {
 
-	int score, action;
+	public int score, action;
 
 	public State(int score, int action) {
 

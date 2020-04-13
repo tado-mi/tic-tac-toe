@@ -1,4 +1,5 @@
 import java.util.*;
+import util.*;
 
 public class TicTacToe3D {
 
@@ -124,7 +125,7 @@ public class TicTacToe3D {
 		return s;
 
  	}
-	
+
 	// minimax algorithm with alpa-beta pruning and
 	// depth-limit search (cut off at 7; 7 chosen experimentally)
 	public int minimax(int depth, int turn, int alpha, int beta) {
@@ -145,7 +146,7 @@ public class TicTacToe3D {
 				int[] temp = board.get(i);
 				s = s + heuristicScore(temp);
 
-			} 
+			}
 
 			if (turn == 1)	return  s;
 			else 			return -s;
@@ -222,28 +223,28 @@ public class TicTacToe3D {
 
 		if (board[0] == turn && board[1] == turn && board[2] == turn)
             return true;
-        
+
         if (board[3] == turn && board[4] == turn && board[5] == turn)
             return true;
-        
+
         if (board[6] == turn && board[7] == turn && board[8] == turn)
             return true;
-        
+
         if (board[0] == turn && board[3] == turn && board[6] == turn)
             return true;
-        
+
         if (board[1] == turn && board[4] == turn && board[7] == turn)
             return true;
-        
+
         if (board[2] == turn && board[5] == turn && board[8] == turn)
             return true;
-        
+
         if (board[0] == turn && board[4] == turn && board[8] == turn)
             return true;
-        
+
         if (board[2] == turn && board[4] == turn && board[6] == turn)
             return true;
-        
+
         return false;
 
 

@@ -1,4 +1,5 @@
 import java.util.*;
+import util.State;
 
 public class TicTacToe2D {
 
@@ -33,13 +34,13 @@ public class TicTacToe2D {
 	public int min(ArrayList<Integer> arr) {
 
 		int min = 1;
-        
+
         for (int i = 0; i < arr.size(); i = i + 1) {
 
             if (arr.get(i) < min) min = arr.get(i);
 
         }
-        
+
         return min;
 
 	}
@@ -47,15 +48,15 @@ public class TicTacToe2D {
 	public int max(ArrayList<Integer> arr) {
 
 		int max = 1;
-        
+
         for (int i = 0; i < arr.size(); i = i + 1) {
 
             if (arr.get(i) > max) max = arr.get(i);
 
         }
-        
+
         return max;
-		
+
 	}
 
 	public void changeState(int cell, int turn) {
@@ -88,7 +89,7 @@ public class TicTacToe2D {
 
 			int focus = emptCells.get(i);
 
-			
+
 			changeState(focus, turn);
 			int currScore = minimax(depth + turn, turn);
 			currScores.add(currScore);
@@ -145,28 +146,28 @@ public class TicTacToe2D {
 
 		if (board[0] == turn && board[1] == turn && board[2] == turn)
             return true;
-        
+
         if (board[3] == turn && board[4] == turn && board[5] == turn)
             return true;
-        
+
         if (board[6] == turn && board[7] == turn && board[8] == turn)
             return true;
-        
+
         if (board[0] == turn && board[3] == turn && board[6] == turn)
             return true;
-        
+
         if (board[1] == turn && board[4] == turn && board[7] == turn)
             return true;
-        
+
         if (board[2] == turn && board[5] == turn && board[8] == turn)
             return true;
-        
+
         if (board[0] == turn && board[4] == turn && board[8] == turn)
             return true;
-        
+
         if (board[2] == turn && board[4] == turn && board[6] == turn)
             return true;
-        
+
         return false;
 
 

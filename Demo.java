@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import util.*;
 
 public class Demo{
 
@@ -20,7 +21,7 @@ public class Demo{
 				game.changeState(4, 1);
 
 			}
-				
+
 			System.err.println("starting!");
 			game.printBoard(userFirst);
 
@@ -110,7 +111,7 @@ public class Demo{
 			while (!game.over()) {
 
 				ArrayList<Position3D> emptCells = game.getEmptCells();
-				
+
 				// print legal locations
 				System.err.print("your may play on board ");
 				int userBoard = emptCells.get(0).subGrid;
